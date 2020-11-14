@@ -1,0 +1,94 @@
+create database dienthoai;
+
+create table NhomHangHoa (
+    MaNhom int primary KEY auto_increment,
+    TenNhom varchar(50) not null,
+    Hinh varchar(50));
+    
+
+    
+create table NhanVien (
+    MSNV int primary key auto_increment, 
+    Username varchar(50) ,
+    Passwords varchar(50),
+    HoTenNV varchar(50) not null,
+    ChucVu varchar(50)not null,
+    DiaChi varchar(50) ,
+    SoDienThoai varchar(10) not null );
+    
+
+    
+create table KhachHang (
+    MSKH int  primary key  AUTO_INCREMENT ,
+    Username varchar(50) not null,
+    Passwords varchar(50) not null,
+    HoTenKH varchar(50) not null , 
+    DiaChi varchar(50) , 
+    SoDienThoai varchar(10) 
+    
+);
+
+   
+create table HangHoa (
+    MSHH int primary KEY auto_increment ,
+    TenHH varchar(50) not null ,
+    Mau varchar(10) ,
+    Gia int,
+    SoLuongHang int not null,
+    MaNhom int not null, 
+    FOREIGN KEY (MaNhom) REFERENCES NhomHangHoa(MaNhom),
+    Hinh varchar(50) ,
+    MoTaHH varchar(500) ,
+    ThongSo varchar(300) 
+    );
+create table DatHang (
+    SoDonDH int  PRIMARY KEY AUTO_INCREMENT,
+    MSKH int not null,
+    FOREIGN KEY (MSKH) REFERENCES KhachHang(MSKH),
+    MSNV int ,
+    FOREIGN KEY (MSNV) REFERENCES NhanVien(MSNV),
+    NgayDH datetime not null, 
+    TrangThai varchar(10) );
+
+create table ChiTietDatHang (
+    	SoDonDH int not null  ,
+    	foreign key (SoDonDH) REFERENCES DatHang(SoDonDH),
+    	MSHH int not null , 
+    	PRIMARY key (SoDonDH,MSHH),
+    	foreign key (MSHH) REFERENCES HangHoa(MSHH),
+    	SoLuong int not null ,
+    	GiaDatHang real not null 
+    );
+#chia ra 5 mat hang  iphone oppo realme samsung xiaomi 
+
+
+insert into NhomHangHoa (TenNhom,Hinh)  value ('oppo','../img/logo/OPPO.png');
+
+insert into NhomHangHoa (TenNhom,Hinh)  value ('iphone','../img/logo/iphon.jpg');
+
+insert into NhomHangHoa (TenNhom,Hinh)  value ('realme','../img/logo/Realme.png');
+
+insert into NhomHangHoa (TenNhom,Hinh)  value ('samsung','../img/logo/Samsung.jpg');
+
+insert into NhomHangHoa (TenNhom,Hinh)  value ('xiaomi','../img/logo/Xiaomi.jpg');
+#khach hang 
+insert into KhachHang (Username,Passwords,HoTenKH,DiaChi,SoDienThoai) VALUES ('pdn','pdn','Phan Định Nghĩa','Vĩnh long','098567457');
+insert into KhachHang (Username,Passwords,HoTenKH,DiaChi,SoDienThoai) VALUES ('ldc','ldc','Lương Định Của','Trà Vinh','019182938');
+insert into KhachHang (Username,Passwords,HoTenKH,DiaChi,SoDienThoai) VALUES ('thl','thl','Trần Hoài Lâm','Cần Thơ','098598457');
+insert into KhachHang (Username,Passwords,HoTenKH,DiaChi,SoDienThoai) VALUES ('ltt','ltt','Lý Tự trọng','Kiên Giang','098123457');
+insert into KhachHang (Username,Passwords,HoTenKH,DiaChi,SoDienThoai) VALUES ('lkh','lkh','Lý Khải Hoàn','Vĩnh Phúc','078667457');
+insert into KhachHang (Username,Passwords,HoTenKH,DiaChi,SoDienThoai) VALUES ('dk','dk','Dương Khai','Vĩnh long','098567237');
+insert into KhachHang (Username,Passwords,HoTenKH,DiaChi,SoDienThoai) VALUES ('hnt','hnt','Hạ Ngưng Thường','Vĩnh long','098123237');
+
+#nhan vien 
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Trần Hoài An','giao hàng','vĩnh long','098564832');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Trần Ngọc Bích','giao hàng','vĩnh long','091234832');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Trần Hạ Thảo','giao hàng','vĩnh phước','098569832');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Trần Hạ Vân','quản hàng','vĩnh phúc','098564124');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Trần Mộc Miên','giao hàng','bạc liêu','098564783');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('nguyễn Minh Châu','giao hàng','vĩnh long','098569062');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Tuệ Lâm Lâm','giao hàng','bình dương','098508322');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Đỗ Quyên Quyên','giao hàng','bình phước','098512382');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai) values ('Đỗ Lan Nguyên','giao hàng','hậu giang','098598732');
+insert into NhanVien(HoTenNV,ChucVu,DiaChi,SoDienThoai,Username,Passwords) values ('Trần Mạnh Quỳnh','admin','Vĩnh Long','0794348343','admin','admin');
+#dua du lieu vao hang hoa 

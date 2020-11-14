@@ -1,0 +1,50 @@
+index.php : 
+	menu.php
+	searchbar.php
+	banner.php 
+	contain.php
+	info.php
+	
+login.php : 
+	menu.php
+	searchbar.php
+	login.php
+	sigin.php
+	infor.php
+cart.php : 
+ 	serchbar.php
+	spcart.php
+	infor.php
+search.php
+	menu.php
+	select.php
+	searchbar.php
+	containsp.php
+	infor.php
+product.php
+	menu.php
+	serchbar.php
+	hien thi thong tin sp 
+	infor.php
+
+userinfo.php
+	menu.php
+	serchbar.php
+	info.php
+
+mysql : 
+	connect.php
+	insert.php
+	delete.php	
+	update.php 
+	sesion.php
+
+
+admin : 
+	index.php : 
+		
+	
+
+
+
+

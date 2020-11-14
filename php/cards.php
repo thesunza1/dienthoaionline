@@ -1,0 +1,26 @@
+<?php
+    $sql =$info;
+    include '../sql/select.php';
+    while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+     <a href="./product.php?ten=<?php echo $row['TenHH']?>">
+     <div class="card">
+        <div class="imgs">
+            <img src="<?php echo $row['Hinh'] ?>" alt="">
+        </div>
+        <div class="name"><?php 
+            $name = $row['TenHH'];
+            
+            if(strlen($name)>16){
+                $name = substr($name,0,16) . "...";
+                
+            }
+            echo $name;
+         ?></div>
+        <div class="cost"><?php echo $row['Gia'] ?> vnd</div>
+        
+     </div>
+     </a>
+     <?php
+    }
+?>
