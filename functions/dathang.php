@@ -26,5 +26,5 @@
     ?>
     <script>
         alert("thành công đặt hàng ");
-        location.href("");
+        location.href="../php/dadathang.php";
     </script>

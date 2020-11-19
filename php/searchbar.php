@@ -11,6 +11,13 @@
             </div>
         </form>
         <div id="cart">
+            <a <?php 
+                if ($_SESSION['MSKH']=="-1") {
+                    echo 'style="visibility: hidden;"';
+                }
+            ?>  href="./dadathang.php"> 
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+            </a>    
             <a href="./cart.php"> 
             <p ><?php 
                 $counts =  count($_SESSION['products']); 
@@ -32,6 +39,7 @@
             ?>  href="./logout.php"> 
             <i class="fa fa-sign-out" aria-hidden="true"></i>
             </a>    
+           
         </div>
         
     </div>

@@ -23,7 +23,9 @@
                     <td>đơn giá</td>
                     <td>số lượng</td>
                     <td>thành tiền</td>
+                    <td>trạng thái</td>
                     <td>thao tác</td>
+                    
                 </tr>
             </table>
         </div>
@@ -72,7 +74,7 @@
                 </tr>
             </table>
         </div>
-        <div style = "<?php if(count($_SESSION['products'])==0) echo "visibility: hidden"?>" id= "buy" onclick="dat()">
+        <div id= "buy" onclick="dat()">
         buy
     </div>  
     </div>
@@ -83,13 +85,7 @@
 
     <script>
         function dat() {
-            let change=confirm("thay đổi địa chỉ giao hàng ?  ");
-            if(change){
-                location.href="./cvkh.php";
-            }
-            else {
-                location.href=  "../functions/dathang.php";
-            }
+            location.href=  "../functions/dathang.php";
         }
     </script>
 </body>
