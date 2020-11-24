@@ -323,9 +323,9 @@ input:required(){
     height: 600px;
 }
 /* index.php */
-.table_index {
+/* .table_index {
     height: auto;
-    background: red;
+    border: 1px solid black;
 }
 .table_index tr {
     height: 50px;
@@ -333,9 +333,45 @@ input:required(){
     width: 100%;
     font-size: 16px;
 
+}*/
+.table_index {
+    margin-top: 30px;
 }
 .table_index th ,.table_index td {
     width: 150px;
     height: 50px;
-    
+    text-align: center;
+} 
+/* #table_index {
+    border-collapse: collapse;
+    width: 100%;
+  }
+   */
+.table_index td, .table_index th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 18px;
+  }
+  
+.table_index tr:nth-child(even)
+  {background-color: #c4c2c2;}
+  
+.table_index tr:hover 
+{background-color: rgb(247, 200, 200);}
+  
+.table_index th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+.choice_index{
+
+    width: auto ;
+    height: auto;
+    text-decoration: none;
+}
+.tbname {
+    text-align: center;
+    margin-top: 50px;
 }

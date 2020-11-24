@@ -17,6 +17,7 @@
         khachhang on dathang.MSKH = khachhang.MSKH  order by dathang.NgayDH desc";
         include '../sql/select.php';
     ?>
+     <h1 class="tbname">KHÁCH HÀNG</h1>
     <table class="table_index">
         <tr>
             <th>số đơn</th>
@@ -27,21 +28,52 @@
             <th>địa chỉ</th>
         </tr>
         <?php
+            $stt =1;
             while($row=mysqli_fetch_array($result) ){
+                $stt++;
                 ?>
+                
                 <tr>
-                <th><?php echo $row['SoDonDH'] ?></th>
-                <th><?php echo $row['HoTenKH'] ?></th>
-                <th><?php echo $row['NgayDH'] ?></th>
-                <th><?php echo $row['TrangThai'] ?></th>
-                <th><?php echo $row['SoDienThoai'] ?></th>
-                <th><?php echo $row['DiaChi'] ?></th>
+                    
+                <td><a href="" class="choice_index" name="status<?php echo $stt ?>"><?php echo $row['SoDonDH'] ?></a></td>
+                <td><?php echo $row['HoTenKH'] ?></td>
+                <td><?php echo $row['NgayDH'] ?></td>
+                <td><?php echo $row['SoDienThoai'] ?></td>
+                <td>
+                <select class="status" name="status<?php echo $stt ?>" onchange="changes(this)">
+                    <option value="wait" <?php if($row['TrangThai'] =="wait" ) {echo "selected";} ?>>chờ xác nhận</option>
+                    <option value="shipping" <?php if($row['TrangThai'] =="shipping" ) {echo "selected";} ?>>đang giao</option>
+                    <option value="delivered" <?php if($row['TrangThai'] =="delivered" ) {echo "selected";} ?>>đã giao</option>
+                    
+                </select>
+                </td>
+                <td><?php echo $row['DiaChi'] ?></td>
                 
                 </tr>
                 <?php
             }
         ?>
+        
 
     </table>
+    <script>
+        // var selects = document.getElementsByName("status");
+        // selects.onchange()
+        // console.log(selects);
+        function changes(selects) {
+            var TrangThai = selects.value;
+            var sodon = document.getElementsByName(selects.name);
+            var sodons = sodon[0].innerHTML;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange=function() {
+                if (this.readyState ==4 && this.status ==200){
+                    alert(this.responseText);
+                }
+            }
+            xhttp.open("GET",'../functions/functionadmin.php?sodon=' + sodons +'&trangthai='+TrangThai,true);
+            xhttp.send();
+        }
+
+    </script>
 </body>
 </html>

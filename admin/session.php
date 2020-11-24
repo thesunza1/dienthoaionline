@@ -16,5 +16,11 @@
         if($url =="/dienthoaionline/admin/chinhsuacv.php") {
             header("location:./login.php");
         }
+        if($url =="/dienthoaionline/admin/khachhang.php") {
+            header("location:./login.php");
+        }
+        if($url =="/dienthoaionline/functions/functionadmin.php") {
+            header("location:./login.php");
+        }
     }
 ?>
