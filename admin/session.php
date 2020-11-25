@@ -22,5 +22,8 @@
         if($url =="/dienthoaionline/functions/functionadmin.php") {
             header("location:./login.php");
         }
+        if($url =="/dienthoaionline/admin/dadathang.php") {
+            header("location:./login.php");
+        }
     }
 ?>

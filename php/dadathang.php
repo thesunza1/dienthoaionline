@@ -57,7 +57,7 @@
                                 <p class="sl">1</p>
                             </td>
                             <td><?php echo $dtdathang['TrangThai'] ?></td>
-                            <td><a id="delete" href="../functions/deletecart.php?mshh=<?php echo $row['MSHH']?>&hh=1">delete </a></td>
+                            <td><a id="delete" href="../functions/deletecart.php?mshh=<?php echo $row['MSHH']?>&hh=1&pid=<?php echo $sohd?>">delete </a></td>
                         </tr>
                     </table>
                 </div>

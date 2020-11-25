@@ -13,11 +13,11 @@
         include "./session.php";
         include './searchbar.php';
         $sql = "SELECT dathang.SoDonDH,khachhang.HoTenKH,khachhang.DiaChi,
-        khachhang.SoDienThoai,dathang.TrangThai,dathang.NgayDH from dathang INNER JOIN 
+        khachhang.SoDienThoai,dathang.TrangThai,dathang.NgayDH,khachhang.MSKH from dathang INNER JOIN 
         khachhang on dathang.MSKH = khachhang.MSKH  order by dathang.NgayDH desc";
         include '../sql/select.php';
     ?>
-     <h1 class="tbname">KHÁCH HÀNG</h1>
+    <h1 class="tbname">ĐƠN HÀNG</h1>
     <table class="table_index">
         <tr>
             <th>số đơn</th>
@@ -31,11 +31,14 @@
             $stt =1;
             while($row=mysqli_fetch_array($result) ){
                 $stt++;
+                
                 ?>
                 
                 <tr>
                     
-                <td><a href="" class="choice_index" name="status<?php echo $stt ?>"><?php echo $row['SoDonDH'] ?></a></td>
+                <td><a class="chitiet" href="./dadathang.php?sodon=<?php echo $row['SoDonDH']?>" class="choice_index" name="status<?php echo $stt ?>"><?php echo $row['SoDonDH'] ?></a>
+                    <a class="xoa" href="../functions/deletecart.php?&hh=2&pid=<?php echo $row['SoDonDH']?>">  xóa</a>
+                </td>
                 <td><?php echo $row['HoTenKH'] ?></td>
                 <td><?php echo $row['NgayDH'] ?></td>
                 <td><?php echo $row['SoDienThoai'] ?></td>

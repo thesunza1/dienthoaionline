@@ -30,10 +30,10 @@
         <?php
             while($row=mysqli_fetch_array($result) ){
                 ?>
-                
                 <tr>
-                    
-                <td><a href="" class="choice_index"><?php echo $row['MSKH'] ?></td>
+                <td><a class="chitiet" href="./cv.php?&hh=1&pid=<?php echo $row['MSKH']?>" class="choice_index"><?php echo $row['MSKH']?></a>
+                    <a class="xoa" href="../functions/deletecart.php?&hh=3&pid=<?php echo $row['MSKH']?>" onclick= "return check()" class="choice_index">xoa</a>
+                </td>
                 <td><?php echo $row['HoTenKH'] ?></td>
                 
                 
@@ -50,5 +50,16 @@
         
 
     </table>
+    <script>
+        function check(){
+            var r = confirm("Press a button!");
+    if (r == true) {
+        return true;
+    } else {
+       return false;
+    }
+        }
+
+    </script>
 </body>
 </html>

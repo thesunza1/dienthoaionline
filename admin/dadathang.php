@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>document</title>
+    <link rel="stylesheet" href="../css/styleAdmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
@@ -12,8 +12,8 @@
 <?php
         include "./session.php";
         include "./searchbar.php";
-        include "./menu.php";
         
+
         ?>
         <div id="allcart">
         <div class= "header">
@@ -22,20 +22,16 @@
                     <td id="tsp">sản phẩm</td>
                     <td>đơn giá</td>
                     <td>số lượng</td>
-                    <td>trang thai</td>
                     <td>thao tác</td>
                 </tr>
             </table>
         </div>
         <?php
-            $mskh = $_SESSION['MSKH'];
-            $sql = "select SoDonDH,TrangThai from dathang where MSKh =$mskh";
-            include '../sql/select.php';
-            $dathang = $result;
+            $sodon = $_GET['sodon'];
+            
             // lay sodondh va trangthai don hang 
-            while($dtdathang = mysqli_fetch_assoc($dathang)){
-                $sohd = $dtdathang['SoDonDH'];
-                $sql ="select hanghoa.* from hanghoa inner JOIN chitietdathang on hanghoa.MSHH=chitietdathang.MSHH where chitietdathang.SoDonDH= $sohd";
+            
+                $sql ="select hanghoa.* from hanghoa inner JOIN chitietdathang on hanghoa.MSHH=chitietdathang.MSHH where chitietdathang.SoDonDH= $sodon";
                 include '../sql/select.php';
                 while($row = mysqli_fetch_assoc($result)){
                     ?>
@@ -56,14 +52,14 @@
                             <td>
                                 <p class="sl">1</p>
                             </td>
-                            <td><?php echo $dtdathang['TrangThai'] ?></td>
-                            <td><a id="delete" href="../functions/deletecart.php?mshh=<?php echo $row['MSHH']?>&hh=1">delete </a></td>
+                            
+                            <td><a id="delete" href="../functions/deletecart.php?mshh=<?php echo $row['MSHH']?>&hh=1&pid=<?php echo $sodon?>">delete </a></td>
                         </tr>
                     </table>
                 </div>
                         <?php
                 }
-            } 
+            
             
                 ?>
      

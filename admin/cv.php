@@ -12,8 +12,12 @@
     <?php 
         include './session.php';
         include './searchbar.php';
+        if($_GET['hh']==1){
+            $mskh= $_GET['pid'];
+            $sql = "select * from khachhang where MSKH=$mskh";
         
-        $sql= "select * from nhanvien where ChucVu = 'admin'";
+
+        
         include '../sql/select.php';
         $row= mysqli_fetch_assoc($result);
         
@@ -21,10 +25,10 @@
     
     <div id="cv">
     
-    <form class="sign"  action="./chinhsuacv.php?hh=1"  method="post">
+    <form class="sign"  action="./chinhsuacv.php?&hh=2&pid=<?php echo $row['MSKH']?>"  method="post">
                 <center>
 
-                        <h1>thông tin cá nhân </h1>
+                        <h1>thông tin khach hang </h1>
                         <p>username:</p>
                         <input type="text"  value=<?php echo $row['Username']?> autocomplete="off" name="uname" pattern="[A-Z,a-z]{1,16}" required>
                         <br>
@@ -35,7 +39,7 @@
                         <input pattern="[0-9,A-Z,a-z]{1,30}" required type="password" name="npass" placeholder="password" autocomplete="off">
                         <br>
                         <p>name:</p>
-                        <input value="<?php echo $row['HoTenNV']?>" pattern=".{4,50}" required type="text" name="u_name" placeholder="name" autocomplete="off">
+                        <input value="<?php echo $row['HoTenKH']?>" pattern=".{4,50}" required type="text" name="u_name" placeholder="name" autocomplete="off">
                         <br>
                         <p>number phone:</p>
                         <input value="<?php echo $row['SoDienThoai']?>" pattern="[0-9]{9,11}" required type="tel" name="phone" placeholder="phone" autocomplete="off">
@@ -47,5 +51,13 @@
                         <button type="submit" style="width : 100px;height: 30px;">lưu thay đổi </button>
                 </center>
        </form></div>
+       <?php
+        }
+        
+
+
+
+
+            ?>
 </body>
 </html> 

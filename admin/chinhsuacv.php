@@ -1,22 +1,24 @@
 <?php 
-        $usernames=$_POST['uname'];
-        $password = $_POST['pass'];
-        $npass = $_POST['npass'];
-        $HoTen = $_POST['u_name'];
-        $address = $_POST['address'];
-        $phone = $_POST['phone'];
+        
         
         include './session.php';
-        $sql =  "select * from nhanvien where Username ='$usernames'";
-        include '../sql/select.php';
+        if($_GET['hh']==1){
+            $usernames=$_POST['uname'];
+            $password = $_POST['pass'];
+            $npass = $_POST['npass'];
+            $HoTen = $_POST['u_name'];
+            $address = $_POST['address'];
+            $phone = $_POST['phone'];
+            $sql =  "select * from nhanvien where Username ='$usernames'";
+            include '../sql/select.php';
         
-        if($result->num_rows==1){
+            if($result->num_rows==1){
             
             $sql =  "select * from nhanvien where Username ='$usernames' and Passwords='$password' and ChucVu='admin'";
             
             include '../sql/select.php';
             
-            if($result->num_rows==1){
+                if($result->num_rows==1){
                 $sql = "update nhanvien set Username='$usernames',Passwords='$npass',HoTenNV='$HoTen',DiaChi='$address',SoDienThoai='$phone' where ChucVu='admin'" ;
                 echo $sql;
                 include '../sql/select.php';
@@ -25,8 +27,8 @@
                     window.location.href= "./cvkh.php";
                 </script>
                 <?php
-            }
-            else {
+                }
+                else {
             
                 ?>
                 <script>
@@ -36,22 +38,74 @@
                 }, 2000);
                 </script>
                 <?php
-            }
+                }
             
 
            
+            }
+            else {
+                echo "username đã tồn tại ";
+                echo $result->rows_num;
+                ?>
+                <script>
+                setTimeout(() => {
+                window.location.href= "./cvkh.php";
+                }, 2000);
+                </script>
+                <?php
+            }
         }
-        else {
-            echo "username đã tồn tại ";
-            echo $result->rows_num;
-            ?>
-            <script>
-            setTimeout(() => {
-                window.location.href= "../php/sign.php";
-            }, 2000);
-            </script>
-            <?php
+        else if($_GET['hh']==2){
+            $usernames=$_POST['uname'];
+            $password = $_POST['pass'];
+            $npass = $_POST['npass'];
+            $HoTen = $_POST['u_name'];
+            $address = $_POST['address'];
+            $phone = $_POST['phone'];
+            $MSKH= $_GET['pid'];
+            
+            $sql =  "select * from KhachHang where Username ='$usernames'";
+            include '../sql/select.php';
+            echo $result->num_rows;
+            if($result->num_rows==1){
+                $sql =  "select * from KhachHang where Username ='$usernames' and Passwords='$password'";
+                include '../sql/select.php';
+                if($result->num_rows==1){
+                    $sql = "update KhachHang set Username='$usernames',Passwords='$npass',HoTenKH='$HoTen',DiaChi='$address',SoDienThoai='$phone' where MSKH=$MSKH" ;
+                    include '../sql/select.php';
+                    ?>
+                    <script>
+                   
+                    window.location.href= "./cv.php?hh=1&pid=<?php echo $MSKH ?>";
+                    </script>
+                    <?php
+                }
+                else {
+                    echo "password sai ";
+                    ?>
+                    <script>
+                    setTimeout(() => {
+                        window.location.href= "./cv.php?hh=1&pid=<?php echo $MSKH ?>";
+                    }, 2000);
+                    </script>
+                    <?php
+                }
+                
+    
+               
+                }
+                else {
+                echo "username đã tồn tại ";
+                echo $result->rows_num;
+                ?>
+                <script>
+                    setTimeout(() => {
+                        window.location.href= "./cv.php?hh=1&pid=<?php echo $MSKH ?>";
+                    }, 2000);
+                </script>
+                <?php
+                }
         }
-
+        
        
 ?>
