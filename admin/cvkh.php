@@ -21,7 +21,7 @@
     
     <div id="cv">
     
-    <form class="sign"  action="./chinhsuacv.php?hh=1"  method="post">
+    <form class="sign"  action="./chinhsuacv.php?hh=1&pid=<?php echo $row['MSNV'] ?>"  method="post">
                 <center>
 
                         <h1>thông tin cá nhân </h1>

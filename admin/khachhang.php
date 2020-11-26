@@ -52,7 +52,7 @@
     </table>
     <script>
         function check(){
-            var r = confirm("Press a button!");
+            var r = confirm("đồng ý xóa!");
     if (r == true) {
         return true;
     } else {

@@ -1,4 +1,7 @@
 <?php 
+    //hh=1 xóa chitietdathang 
+    //hh=2 xóa hóa đơn khi chitietdathang ko có giá trị 
+     //hh=3 xoa khách hàng khi không có hóa đơn 
     include '../php/session.php';
     if(isset($_GET['mshh'])){
         $num =$_GET['mshh'] ;
@@ -9,6 +12,7 @@
     
     if(isset($_GET['hh'])){
         if($_GET['hh']==1){
+           
             $sql="delete from chitietdathang where mshh=$num and SoDonDH=$pid";
             include '../sql/select.php';
             ?>
@@ -16,6 +20,7 @@
             <?php
         }
         else if($_GET['hh']==2){
+            
                 $sql="select * from chitietdathang where SoDonDH=$pid";
                 include '../sql/select.php';
                 echo $result->num_rows;
@@ -40,6 +45,7 @@
                 }
         }
         else if($_GET['hh']==3){
+           
                     $sql="select * from dathang where MSKH=$pid";
                     include '../sql/select.php';
                     if($result->num_rows==0){
@@ -65,6 +71,58 @@
                     
                 
         }
+        else if($_GET['hh']==2){
+            
+            $sql="select * from chitietdathang where SoDonDH=$pid";
+            include '../sql/select.php';
+            echo $result->num_rows;
+            if ($result->num_rows==0){
+                $sql="delete from dathang where SoDonDH=$pid";
+                include '../sql/select.php';
+                ?>
+                <script>
+                alert("thành công");
+                history.go(-1);
+                
+                </script>
+            <?php
+            }
+            else {
+                ?>
+                <script>
+                    alert("không thể xóa do còn hàng trong đơn");
+                    history.go(-1);
+                </script>
+            <?php
+            }
+    }
+    else if($_GET['hh']==4){
+       
+                $sql="select * from dathang where MSNV=$pid";
+                include '../sql/select.php';
+                if($result->num_rows==0){
+                    $sql="delete from nhanvien where MSNV=$pid";
+                    include '../sql/select.php';
+                    ?>
+                    <script>
+                    alert("thành công xoa nhan vien");
+                    history.go(-1);
+                    
+                    </script>
+                    <?php
+                }
+                else {
+                    ?>
+                    <script>
+                    alert("không thể xóa do nhân viên đang giao hàng ");
+                    history.go(-1);
+                    
+                    </script>
+                    <?php
+                }
+                
+            
+    }
     }
     else {
         
