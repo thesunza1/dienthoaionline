@@ -7,7 +7,7 @@
     transition:0.3s;
 }
 #menu ,#searchbar,#banner,#info ,#phone,#offer,#sign,#cv
-,#fooder,#allcart,.table_index
+,#fooder,#allcart,.table_index,.tshanghoa
  { 
     width: 1400px;
     height: 50px;
@@ -496,4 +496,57 @@ input:required(){
 #delete:hover {
     color : red ; 
 
+}
+/* hanghoa.php */
+.them {
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+    background : blueviolet;
+    font-size: 30px;
+    color: white;
+    line-height: 30px;
+    text-decoration: none;
+    margin-left: 100px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.them:hover {
+    background: black;
+    box-shadow: 1px 1px 1px black;
+}
+
+/* themhanghoa.php */
+.tshanghoa {
+    background: red;
+    height: auto    ;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-top: 50px;
+    font-size: 20px;
+
+}
+.tshanghoa table{
+    width: 90%;
+    height: auto;
+
+}
+.tshanghoa th {
+    width: 30%;
+    height: auto;
+}
+.tshanghoa th,.tshanghoa td {
+    line-height: 30px;
+}
+.tshanghoa p , .tshanghoa input,.tshanghoa textarea{
+    font-size: 20px;
+}
+.tshanghoa 
+.tshanghoa p {
+    line-height: 20px;
+    
+}
+.tshanghoa input {
+    width: 300px;
+    height: 30px;
 }
