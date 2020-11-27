@@ -16,12 +16,13 @@
         include "../sql/select.php";
     ?>
     <div class="tshanghoa">
-        <form action="../functions/deletecart.php?hh=5" method="post">
+    <!-- ../functions/deletecart.php?hh=5 -->
+        <form action="../functions/deletecart.php?hh=5" method="post"  enctype="multipart/form-data">
         <center>    
         <h1>thêm hàng hóa  </h1>
             <table>
                 <tr><th><p>tên :</p></th>
-                    <td><input type="text" autocomplete="on" name="phonename" pattern="{1,16}" required></td></tr>
+                    <td><input type="text" autocomplete="on" name="namephone" pattern="{1,16}" required></td></tr>
                     
                 <tr><th><p>giá  :</p></th>
                     <td><input type="number"  autocomplete="on" name="gia" pattern="[0-9]{7,16}" required></td></tr>    
@@ -36,19 +37,19 @@
                             <option value="white" >trắng</option>
                             <option value="red" >đỏ</option>   
                             <option value="yellow" >vàng</option>   
-                        </select>     
+                        </select>    
                     </td></tr>
                     
                 <tr><th><p>hình ảnh</p></th>
-                    <td><input type="file"  name="hinh"></td></tr>
+                    <td><input type="file" name="fileToUpload" id="fileToUpload" accept="image/*"></td></tr>
                     
                 <tr><th><p>loại</p></th>
                     <td>
-                    <select name="mau">
+                    <select name="loai">
                             <?php
                                 while($row=mysqli_fetch_assoc($result)){
                                     ?>
-                                        <option value="<?php echo  $row['TenNhom']?>" selected ><?php echo  $row['TenNhom']?></option>
+                                        <option value="<?php echo  $row['MaNhom']?>" selected ><?php echo  $row['TenNhom']?></option>
                                     <?php
                                 }
                             ?>
@@ -59,7 +60,7 @@
                     
                 <tr>
                     <th><p>mô tả</p></th>
-                    <td><textarea value="" name="thongso" id="" cols="100" rows="5">
+                    <td><textarea value="" name="mota" id="" cols="100" rows="5">
                     Điện thoại Oppo A53 chính hãng mới được phân phối chính thức bởi 
                     Oppo Việt Nam. Oppo A53 chính hãng nổi bật với pin Li-Po 5000mAh kèm sạc
                     nhanh 18W, vi xử lý Snapdragon 460 cùng màn hình đục lỗ thời thượng IPS 6.5 inch,
@@ -145,7 +146,9 @@
                     
                 
             </table>     
+            <button type="submit" name="submit">them vao </button>
             </center>
+            
         </form>
     </div>
 </body>

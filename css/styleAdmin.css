@@ -518,13 +518,13 @@ input:required(){
 
 /* themhanghoa.php */
 .tshanghoa {
-    background: red;
+    background: rgb(36, 216, 141);
     height: auto    ;
     padding-bottom: 20px;
     padding-left: 20px;
     margin-top: 50px;
     font-size: 20px;
-
+    margin-bottom: 30px;
 }
 .tshanghoa table{
     width: 90%;
@@ -537,11 +537,12 @@ input:required(){
 }
 .tshanghoa th,.tshanghoa td {
     line-height: 30px;
+    height: 50px;
 }
-.tshanghoa p , .tshanghoa input,.tshanghoa textarea{
+.tshanghoa p , .tshanghoa input,.tshanghoa textarea,.tshanghoa select{
     font-size: 20px;
 }
-.tshanghoa 
+
 .tshanghoa p {
     line-height: 20px;
     
@@ -549,4 +550,10 @@ input:required(){
 .tshanghoa input {
     width: 300px;
     height: 30px;
+}
+.tshanghoa button {
+    border-radius: 5px;
+    background: orange;
+    font-size: 25px;
+    width: 100px;
 }

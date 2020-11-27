@@ -25,5 +25,17 @@
         if($url =="/dienthoaionline/admin/dadathang.php") {
             header("location:./login.php");
         }
+        if($url =="/dienthoaionline/admin/themhanghoa.php") {
+            header("location:./login.php");
+        }
+        if($url =="/dienthoaionline/admin/cv.php") {
+            header("location:./login.php");
+        }
+        if($url =="/dienthoaionline/functions/deletecart.php") {
+            header("location:./login.php");
+        }
+        if($url =="/dienthoaionline/admin/hanghoa.php") {
+            header("location:./login.php");
+        }
     }
 ?>
