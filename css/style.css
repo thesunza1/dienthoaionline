@@ -194,6 +194,8 @@ body {
     background: gray;
     text-align: center;
     padding-bottom: 3px;
+    padding-top: 30px;
+    margin-top: 20px;
 }
 
 /* cards.php */
@@ -419,14 +421,16 @@ body {
     display : block;
     margin-top: 20px;
     font-size: 50px;
+    color: white;
 }
 .sign p {
     display: inline-block;
     width: 100px;
     height: 30px;
-    color: black;
+    color: white;
     line-height: 30px;
     font-weight: bold;
+    font-size: 18px;
     
 }
 .sign input {

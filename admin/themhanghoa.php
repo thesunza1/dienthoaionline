@@ -60,7 +60,7 @@
                     
                 <tr>
                     <th><p>mô tả</p></th>
-                    <td><textarea value="" name="mota" id="" cols="100" rows="5">
+                    <td><textarea value="" name="mota" id="" cols="100" rows="7">
                     Điện thoại Oppo A53 chính hãng mới được phân phối chính thức bởi 
                     Oppo Việt Nam. Oppo A53 chính hãng nổi bật với pin Li-Po 5000mAh kèm sạc
                     nhanh 18W, vi xử lý Snapdragon 460 cùng màn hình đục lỗ thời thượng IPS 6.5 inch,
@@ -72,7 +72,7 @@
                     
                 <tr>
                     <th><p>thông số</p></th>
-                    <td><textarea  name="thongso" id="" cols="100" rows="5" >
+                    <td><textarea  name="thongso" id="" cols="100" rows="25" >
                     
                     <table class="attributes">
                     <tr>

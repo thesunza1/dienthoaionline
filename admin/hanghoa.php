@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>hàng hóa</title>
     <link rel="stylesheet" href="../css/styleAdmin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -36,8 +36,8 @@
                 
                 <tr>
                     
-                <td><a class="chitiet" href="./themhanghoa.php" class="choice_index" name="status<?php echo $stt ?>"><?php echo $row['MSHH'] ?></a>
-                    <a class="xoa" href="../functions/deletecart.php?&hh=6&pid=<?php echo $row['MSHH']?>">  xóa</a>
+                <td><a class="chitiet" href="./suahanghoa.php?pid=<?php echo $row['MSHH']?>" class="choice_index" name="status<?php echo $stt ?>"><?php echo $row['MSHH'] ?></a>
+                    <a class="xoa" href="../functions/deletecart.php?&hh=7&pid=<?php echo $row['MSHH']?>">  xóa</a>
                 </td>
                 <td><?php echo $row['TenHH'] ?></td>
                 <td><?php echo $row['Mau'] ?></td>

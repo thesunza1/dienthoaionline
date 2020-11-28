@@ -37,5 +37,8 @@
         if($url =="/dienthoaionline/admin/hanghoa.php") {
             header("location:./login.php");
         }
+        if($url =="/dienthoaionline/admin/suahanghoa.php") {
+            header("location:./login.php");
+        }
     }
 ?>

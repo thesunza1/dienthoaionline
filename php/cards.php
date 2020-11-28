@@ -3,7 +3,7 @@
     include '../sql/select.php';
     while ($row = mysqli_fetch_assoc($result)) {
         ?>
-     <a href="./product.php?ten=<?php echo $row['TenHH']?>">
+     <a href="./product.php?pid=<?php echo $row['MSHH']?>">
      <div class="card">
         <div class="imgs">
             <img src="<?php echo $row['Hinh'] ?>" alt="">
