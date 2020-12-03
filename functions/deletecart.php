@@ -170,12 +170,12 @@
                     ?>
                     <script>
                     
-                    alert("ảnh đã tồn tại.vui lòng đổi tên ảnh ");
-                    history.go(-1);
+                    // alert("ảnh đã tồn tại.vui lòng đổi tên ảnh ");
+                    // history.go(-1);
                     </script>
 
                     <?php
-                    $uploadOk = 0;
+                    $uploadOk = 1;
                 }
   
                 // Check file size
@@ -347,7 +347,7 @@
                         ?>
                         <script>
                             alert("thành công ");
-                            // document.href= "/admin/suahanghoa.php?pid=<?php echo $pid?>";
+                            // document.href= "/admin/suahanghoa.php?pid=<?php //echo $pid?>";
                             history.go(-1);
                         </script>
 
