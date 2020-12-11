@@ -15,7 +15,7 @@
         $sql = "SELECT * from hanghoa";
         include '../sql/select.php';
     ?>
-    <h1 class="tbname">ĐƠN HÀNG</h1>
+    <h1 class="tbname">HÀNG HÓA </h1>
     <a class="them" href="./themhanghoa.php">thêm hàng hóa</a>
     <table class="table_index">
         

@@ -16,7 +16,7 @@
         
         include '../sql/select.php';
     ?>
-    <h1 class="tbname">KHÁCH HÀNG</h1>
+    <h1 class="tbname">NHÂN VIÊN</h1>
     <table class="table_index">
         <tr>
             <th>MSNV</th>
