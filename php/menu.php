@@ -6,7 +6,7 @@
                 while ( $row = mysqli_fetch_assoc($result) )
                 {
                     ?>
-                    <a href="./resultsearch.php?txtsearch=<?php echo $row['TenNhom']?>" class="hang">
+                    <a title="<?php echo $row['TenNhom']?>" href="./resultsearch.php?txtsearch=<?php echo $row['TenNhom']?>" class="hang">
                     <img src="<?php echo $row['Hinh']?>" alt="">
                     </a>
 
