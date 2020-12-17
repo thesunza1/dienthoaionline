@@ -34,7 +34,7 @@
             include "../sql/select.php";
             $row = mysqli_fetch_assoc($result);
             ?>
-            <div class="displaysp">
+            <div  class="displaysp">
             <table>
                 <tr>
                     <td class="tsp">
