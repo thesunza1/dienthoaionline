@@ -28,7 +28,7 @@
             
                 $sql="select * from chitietdathang where SoDonDH=$pid";
                 include '../sql/select.php';
-                echo $result->num_rows;
+                //echo $result->num_rows;
                 if ($result->num_rows==0){
                     $sql="delete from dathang where SoDonDH=$pid";
                     include '../sql/select.php';
@@ -80,7 +80,7 @@
             
             $sql="select * from chitietdathang where SoDonDH=$pid";
             include '../sql/select.php';
-            echo $result->num_rows;
+            //echo $result->num_rows;
             if ($result->num_rows==0){
                 $sql="delete from dathang where SoDonDH=$pid";
                 include '../sql/select.php';
@@ -138,7 +138,7 @@
                 $mota = $_POST['mota'];
                 $thongso = $_POST['thongso'];
                 
-                echo $hinh;
+                //echo $hinh;
                 $target_dir = "../img/vsmart";
                 $target_file = $target_dir . basename($hinh);
                
@@ -184,12 +184,12 @@
                     ?>
                     <script>
                     
-                    alert("file quá lớn");
-                    history.go(-1);
+                    // alert("file quá lớn");
+                    // history.go(-1);
                     </script>
 
                     <?php
-                    $uploadOk = 0;
+                    $uploadOk = 1;
                 }
   
                 // Allow certain file formats
@@ -258,7 +258,7 @@
                 $thongso = $_POST['thongso'];
 
                 
-                echo $hinh;
+                //echo $hinh;
                 $target_dir = "../img/vsmart/";
                 $target_file = $target_dir . basename($hinh);
                
@@ -267,7 +267,7 @@
                 $sql = "UPDATE `hanghoa` SET `TenHH`='$namephone',
                 `Mau`='$mau',`Gia`=$gia,`SoLuongHang`=$soluong,`MaNhom`=$loai,
                 `Hinh`='$target_file',`MoTaHH`='$mota',`ThongSo`='$thongso' WHERE MSHH=$pid";
-                echo $sql;
+                //echo $sql;
                 // Check if image file is a actual image or fake image
                 if(isset($_POST["submit"])) {
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -305,12 +305,12 @@
                     ?>
                     <script>
                     
-                    alert("file quá lớn");
-                    history.go(-1);
+                    // alert("file quá lớn");
+                    // history.go(-1);
                     </script>
 
                     <?php
-                    $uploadOk = 0;
+                    $uploadOk = 1;
                 }
   
                 // Allow certain file formats
@@ -342,7 +342,7 @@
                 } 
                 else {
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                        //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                         include '../sql/select.php';
                         ?>
                         <script>
@@ -373,7 +373,7 @@
             
                 $sql="select * from chitietdathang where MSHH=$pid";
                 include '../sql/select.php';
-                echo $result->num_rows;
+                //echo $result->num_rows;
                 if ($result->num_rows==0){
                     $sql="delete from hanghoa where MSHH=$pid";
                     include '../sql/select.php';

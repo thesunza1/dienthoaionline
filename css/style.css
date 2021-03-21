@@ -515,6 +515,7 @@ body {
 }
 #tsp {
     width: 800px;
+    
 }
 
 .displaysp {
@@ -529,6 +530,7 @@ body {
 }
 .displaysp tr {
     height: 300px;
+    
 }
 .displaysp td:not(.imgcart){
     width: 100px;

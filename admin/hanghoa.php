@@ -12,7 +12,7 @@
     <?php
         include "./session.php";
         include './searchbar.php';
-        $sql = "SELECT * from hanghoa";
+        $sql = "SELECT * from hanghoa JOIN nhomhanghoa on nhomhanghoa.MaNhom=hanghoa.MaNhom order by MSHH desc";
         include '../sql/select.php';
     ?>
     <h1 class="tbname">HÀNG HÓA </h1>
@@ -38,13 +38,14 @@
                     
                 <td><a class="chitiet" href="./suahanghoa.php?pid=<?php echo $row['MSHH']?>" class="choice_index" name="status<?php echo $stt ?>"><?php echo $row['MSHH'] ?></a>
                     <a class="xoa" href="../functions/deletecart.php?&hh=7&pid=<?php echo $row['MSHH']?>">  xóa</a>
+                    <a class="chitiet" href="../php/product.php?pid=<?php echo $row['MSHH']?>" target ="_blank">  xem</a>
                 </td>
                 <td><?php echo $row['TenHH'] ?></td>
                 <td><?php echo $row['Mau'] ?></td>
                 <td><?php echo $row['Gia'] ?></td>
                 <td><?php echo $row['SoLuongHang'] ?></td>
                 <td>
-                <?php echo $row['MaNhom'] ?>
+                <?php echo $row['TenNhom'] ?>
                 
                 </td>
                 

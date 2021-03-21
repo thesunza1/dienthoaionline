@@ -27,5 +27,12 @@
         if($url == "/dienthoaionline/functions/dathang.php" ){
             header("location:./sign.php");
         }
+        if($url == "/dienthoaionline/php/chinhsuacv.php" ){
+            header("location:./sign.php");
+        }
+        if($url == "/dienthoaionline/php/dadathang.php" ){
+            header("location:./sign.php");
+        }
+        
     }
 ?>
